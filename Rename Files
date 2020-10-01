@@ -1,0 +1,15 @@
+import os
+
+os.chdir('C:\\Users\\Nick\\Desktop\\New folder (2)')
+
+for f in os.listdir():
+    file_name,file_ext = os.path.splitext(f)
+    
+    f_title,f_desc,f_number=file_name.split('_')
+    f_title=f_title.strip()
+    f_desc=f_desc.strip()
+    f_number=f_number.strip()
+    new_name = '{}-{}-{}{}'.format(f_number,f_title,f_desc,file_ext)
+
+    os.rename(f,new_name)
+
